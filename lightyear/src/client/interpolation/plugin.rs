@@ -131,7 +131,7 @@ pub fn add_prepare_interpolation_systems<C: SyncComponent>(
         Update,
         add_component_history::<C>.in_set(InterpolationSet::SpawnHistory),
     );
-    app.observe(removed_components::<C>);
+    app.add_observer(removed_components::<C>);
     match interpolation_mode {
         ComponentSyncMode::Full => {
             app.add_systems(
@@ -199,6 +199,6 @@ impl Plugin for InterpolationPlugin {
             Update,
             spawn_interpolated_entity.in_set(InterpolationSet::SpawnInterpolation),
         );
-        app.observe(despawn_interpolated);
+        app.add_observer(despawn_interpolated);
     }
 }

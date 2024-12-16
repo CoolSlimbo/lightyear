@@ -62,11 +62,11 @@ thiserror = "2.0.3"
 seahash = "4.1.0"
 
 # input
-leafwing-input-manager = { version = "0.15", default-features = false, optional = true }
+leafwing-input-manager = { version = "0.16", default-features = false, optional = true }
 
 # physics
-avian2d = { version = "0.1.2", optional = true, default-features = false }
-avian3d = { version = "0.1.2", optional = true, default-features = false }
+avian2d = { git = "https://github.com/Jondolf/avian", rev = "b47c30c5ef231e3ce27435b56604b638ba5f9f4e", optional = true, default-features = false }
+avian3d = { git = "https://github.com/Jondolf/avian", rev = "b47c30c5ef231e3ce27435b56604b638ba5f9f4e", optional = true, default-features = false }
 
 # serialization
 bincode = { version = "2.0.0-rc.3", features = ["serde"] }
@@ -101,7 +101,7 @@ metrics-exporter-prometheus = { version = "0.15.1", optional = true, default-fea
 ] }
 
 # bevy
-bevy = { version = "0.14", default-features = false, features = [
+bevy = { version = "0.15", default-features = false, features = [
   "multi_threaded",
   "bevy_state",
   "serialize",
@@ -183,7 +183,7 @@ bitvec = "1.0"
 approx = "0.5.1"
 
 [dev-dependencies.leafwing-input-manager]
-version = "*"
+version = "0.16"
 # Used by tests.
 features = ["keyboard"]
 

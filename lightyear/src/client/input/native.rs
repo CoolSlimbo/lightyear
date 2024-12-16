@@ -194,7 +194,7 @@ impl<A: UserAction> Plugin for InputPlugin<A> {
             FixedPostUpdate,
             clear_input_events::<A>.in_set(InputSystemSet::ClearInputEvent),
         );
-        app.observe(receive_tick_events::<A>);
+        app.add_observer(receive_tick_events::<A>);
         app.add_systems(
             PostUpdate,
             (prepare_input_message::<A>.in_set(InputSystemSet::SendInputMessage),),
